@@ -1,0 +1,57 @@
+!+
+! Translated from MADX to Bmad by madx_to_bmad.py
+! File: rnf.seq
+!-
+
+
+!TITLE Converted from LATTICE EDITOR: Lattice Russian Neutron Factory.opt[*].  Tue Nov 12 16:41:27 2024
+
+!  Kinetic energy=1500 MeV, mass=938.28 MeV
+!  BetaX=5.84671 m,  AlphaX=1.60159e-015,  BetaY=10.7439 m,  AlphaY=5.09089e-016
+!  DispX=0.0659723 m,  DispPX=-1.57816e-016,  DispY=0 m,  DispPY=0
+
+!OPTION, -ECHO;
+!ASSIGN, ECHO="line.echo";
+
+parameter[E_tot] = 2.4382796 * 1e9
+parameter[geometry] = closed
+
+od1: drift, l = 0.2
+qfa1: quadrupole, l = 0.2, k1 = 0.6307508908
+qda1: quadrupole, l = 0.2, k1 = -0.8125829849
+bda: sbend, l = 1.87165559, angle = 0.2617900427
+obda: drift, l = 1.87165559
+obpm: drift, l = 0.3
+sf: sextupole, l = 0.3, k2 = 3.024540438
+sd: sextupole, l = 0.3, k2 = -5.195202691
+qfstr: quadrupole, l = 0.2, k1 = 0.5987804127
+qdstr: quadrupole, l = 0.2, k1 = -0.7493080804
+
+MACHINE: LINE=(QDstr, OD1, OBPM, OD1, OBDA, OD1, Sf, OD1, QFstr, QFstr,OD1, OBPM, OD1, OBDA, OD1, Sd, OD1, QDstr, QDstr,
+          OD1, OBPM, OD1, OBDA,OD1, Sf, OD1, QFstr, QFstr, OD1, OBPM, OD1, OBDA, OD1, Sd, OD1, QDstr,QDA1, OD1, OBPM, OD1, BDA,
+          OD1, Sf, OD1, QFA1, QFA1, OD1, OBPM, OD1, BDA,OD1, Sd, OD1, QDA1, QDA1, OD1, OBPM, OD1, BDA, OD1, Sf, OD1, QFA1, QFA1,
+         OD1, OBPM, OD1, BDA, OD1, Sd, OD1, QDA1, QDA1, OD1, OBPM, OD1, BDA, OD1,Sf, OD1, QFA1, QFA1, OD1, OBPM, OD1, BDA, OD1,
+          Sd, OD1, QDA1, QDA1, OD1,OBPM, OD1, BDA, OD1, Sf, OD1, QFA1, QFA1, OD1, OBPM, OD1, BDA, OD1, Sd,OD1, QDA1, QDA1, OD1,
+          OBPM, OD1, BDA, OD1, Sf, OD1, QFA1, QFA1, OD1, OBPM,OD1, BDA, OD1, Sd, OD1, QDA1, QDA1, OD1, OBPM, OD1, BDA, OD1, Sf,
+          OD1,QFA1, QFA1, OD1, OBPM, OD1, BDA, OD1, Sd, OD1, QDA1, QDstr, OD1, OBPM, OD1,OBDA, OD1, Sf, OD1, QFstr, QFstr, OD1,
+          OBPM, OD1, OBDA, OD1, Sd, OD1,QDstr, QDstr, OD1, OBPM, OD1, OBDA, OD1, Sf, OD1, QFstr, QFstr, OD1, OBPM,OD1, OBDA, OD1,
+          Sd, OD1, QDstr, QDstr, OD1, OBPM, OD1, OBDA, OD1, Sf, OD1,QFstr, QFstr, OD1, OBPM, OD1, OBDA, OD1, Sd, OD1, QDstr,
+          QDstr, OD1, OBPM,OD1, OBDA, OD1, Sf, OD1, QFstr, QFstr, OD1, OBPM, OD1, OBDA, OD1, Sd, OD1,QDstr, QDA1, OD1, OBPM, OD1,
+          BDA, OD1, Sf, OD1, QFA1, QFA1, OD1, OBPM, OD1,BDA, OD1, Sd, OD1, QDA1, QDA1, OD1, OBPM, OD1, BDA, OD1, Sf, OD1, QFA1,
+         QFA1, OD1, OBPM, OD1, BDA, OD1, Sd, OD1, QDA1, QDA1, OD1, OBPM, OD1, BDA,OD1, Sf, OD1, QFA1, QFA1, OD1, OBPM, OD1, BDA,
+          OD1, Sd, OD1, QDA1, QDA1,OD1, OBPM, OD1, BDA, OD1, Sf, OD1, QFA1, QFA1, OD1, OBPM, OD1, BDA, OD1,Sd, OD1, QDA1, QDA1,
+          OD1, OBPM, OD1, BDA, OD1, Sf, OD1, QFA1, QFA1, OD1,OBPM, OD1, BDA, OD1, Sd, OD1, QDA1, QDA1, OD1, OBPM, OD1, BDA, OD1,
+          Sf,OD1, QFA1, QFA1, OD1, OBPM, OD1, BDA, OD1, Sd, OD1, QDA1, QDstr, OD1, OBPM,OD1, OBDA, OD1, Sf, OD1, QFstr, QFstr,
+          OD1, OBPM, OD1, OBDA, OD1, Sd, OD1,QDstr, QDstr, OD1, OBPM, OD1, OBDA, OD1, Sf, OD1, QFstr, QFstr, OD1, OBPM,OD1, OBDA,
+          OD1, Sd, OD1, QDstr)
+
+!use,period=machine;
+
+!twiss energy= 2.4382796, betx=   5.84671, alfx=1.60159e-015,
+!     bety=   10.7439, alfy=5.09089e-016,
+!     dx= 0.0659723, dpx=-1.57816e-016,
+!     dy=         0, dpy=         0;
+
+!survey,;
+
+!stop;

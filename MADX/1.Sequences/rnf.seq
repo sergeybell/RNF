@@ -46,8 +46,8 @@ OD1, OBDA, OD1, Sf, OD1, QFstr, QFstr, OD1, OBPM, OD1, OBDA, OD1, Sd, OD1,
 QDstr, QDstr, OD1, OBPM, OD1, OBDA, OD1, Sf, OD1, QFstr, QFstr, OD1, OBPM,
 OD1, OBDA, OD1, Sd, OD1, QDstr);
 
-!beam, MASS= 0.9382796,CHARGE=1, ENERGY= 2.4382796,
-!      EX=  3.2e-005, EY=  3.2e-005, SIGE=     0.001;
+beam, MASS= 0.9382796,CHARGE=1, ENERGY= 2.4382796,
+      EX=  3.2e-005, EY=  3.2e-005, SIGE=     0.001;
 
 !use,period=machine;
 
