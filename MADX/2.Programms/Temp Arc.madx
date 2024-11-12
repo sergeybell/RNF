@@ -1,0 +1,15 @@
+CHDIR, DIR = "/Users/Bell/GIT_REPOS/RNF/MADX/1.Sequences/";
+CALL FILE  = "rnf.seq";
+TITLE, "Russian Neutron Factory";
+
+beam, MASS= 0.9382796, CHARGE=1, ENERGY= 2.4382796,
+      EX=  3.2e-005, EY=  3.2e-005, SIGE=     0.001;
+
+USE, PERIOD = MACHINE;
+CHDIR, DIR = "/Users/Bell/GIT_REPOS/RNF/MADX";
+
+TWISS, DELTAP = 0.000, file=tbl/twiss.tbl;
+plot, haxis=s, vaxis1=betx,bety, vaxis2=dx, colour=100, style=1, noversion, file=img/twiss;
+plot, haxis=s, vaxis=dx, colour=100, style=1, noversion, file=img/twiss;
+
+stop;
