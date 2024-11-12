@@ -1,0 +1,252 @@
+#Ring with two arcs "racetrack". 
+#Each arc has 12 magnets, Field=1.05 Tesla 
+#Each arc consists of 6 cells, two of them are with missing magnet
+#-------MAIN parameters--------------------------------
+#massa of proton in [MeV]------------------------------
+$Mp=938.2796;  =>    938.2796
+#final kinetic energy of proton in ring in [MeV]-------
+$Wp=1500.;  =>        1500
+#gamma-------------------------------------------------
+$gamma=($Wp/$Mp)+1.;  =>  2.59867059
+#Full energy Ep=Mp*gamma-------------------------------
+$Ep=$Mp*$gamma;  =>   2438.2796
+#relative velocity-------------------------------------
+$beta=sqrt(1-1/($gamma*$gamma));  => 0.922994915
+# proton mass in  [kG] m_p-----------------------------
+$m_p=1.6726e-27;  => 1.6726e-027
+#el  charge in [C]-------------------------------------
+$Qp=1.6022e-19;  => 1.6022e-019
+#speed of ligt in [m/sec]------------------------------
+$c_light=$c*0.01;  =>   299792458
+#Rigidity of ring in [T*m]-----------------------------
+$BR=$m_p*$gamma*$c_light*$beta/$Qp;  =>  7.50665761
+#Magnetic field in magnet in [Tesla]-------------------
+$B=1.05;  =>        1.05
+# radius of magnet curvature in [cm]--------------------
+$R=$BR/$B*100;  =>  714.919773
+# Full length of all magnets 2pi*R in [cm]--------------
+$L_mags=2*$pi*$R;  =>  4491.97341
+#
+#=========ONE ARC STRUCTURE============================
+# 
+# cellB=QD1 B QF1 QF1 B QD1 - cell with magnets
+# 
+# arc=6 cells
+# 
+# number of magnets per arc
+$n_mag=12;  =>          12
+# number of arcs
+$n_arc=2;  =>           2
+# number of magnet on two arcs
+$N_mag=$n_mag*$n_arc        ;  =>          24
+#Lengt of one magnet in [cm]
+$L_mag=$L_mags/$N_mag;  =>  187.165559
+# angle of bending per one magnet in [deg]------------
+$ang_B=$L_mag/($L_mags)*360;  =>          15
+# total angle of bending in the ring in [deg]---------
+$ang_ring=$ang_B*$N_mag;  =>         360
+#=====================================================
+
+
+
+
+#*******************************************************************************************
+OptiM
+Energy[MeV]=1500       Mass[MeV]=938.2796 
+Emittance: ex[cm]=0.0032  ey[cm]=0.0032  DP/P=0.001 
+Initial:	BetaX[cm]=584.671 	BetaY[cm]=1074.39 
+	AlfaX=1.60159e-015 	AlfaY=5.09089e-016 
+	DispersX[cm]=6.59723 	DispersY[cm]=0 
+	Dsp_PrimeX=-1.57816e-016 	DspPrimeY=0 
+	X[cm]=0.000    	Y[cm]=0.000    	Z[cm]=0.000    	S[cm]=0.000    
+	tetaX[deg]=0        	tetaY[deg]=0        
+#  Elements: O-free space, D-dipole, Q-quad, S-sextipole
+#  Elements: B-dipole with gradient
+begin lattice. Number of periods=1 
+
+#===============================================ARC I======================================================
+
+QDstr  OD1  OBPM  OD1     OBDA     OD1   Sf  OD1  QFstr  QFstr   OD1  OBPM   OD1    OBDA   OD1   Sd    OD1  QDstr
+QDstr  OD1  OBPM  OD1     OBDA     OD1   Sf  OD1  QFstr  QFstr   OD1  OBPM   OD1    OBDA   OD1   Sd    OD1  QDstr
+
+QDA1  OD1  OBPM  OD1     BDA     OD1   Sf  OD1  QFA1  QFA1   OD1  OBPM   OD1    BDA   OD1   Sd    OD1  QDA1
+QDA1  OD1  OBPM  OD1     BDA     OD1   Sf  OD1  QFA1  QFA1   OD1  OBPM   OD1    BDA   OD1   Sd    OD1  QDA1
+QDA1  OD1  OBPM  OD1     BDA     OD1   Sf  OD1  QFA1  QFA1   OD1  OBPM   OD1    BDA   OD1   Sd    OD1  QDA1
+
+QDA1  OD1  OBPM  OD1     BDA     OD1   Sf  OD1  QFA1  QFA1   OD1  OBPM   OD1    BDA   OD1   Sd    OD1  QDA1
+QDA1  OD1  OBPM  OD1     BDA     OD1   Sf  OD1  QFA1  QFA1   OD1  OBPM   OD1    BDA   OD1   Sd    OD1  QDA1
+QDA1  OD1  OBPM  OD1     BDA     OD1   Sf  OD1  QFA1  QFA1   OD1  OBPM   OD1    BDA   OD1   Sd    OD1  QDA1
+
+QDstr  OD1  OBPM  OD1     OBDA     OD1   Sf  OD1  QFstr  QFstr   OD1  OBPM   OD1    OBDA   OD1   Sd    OD1  QDstr
+QDstr  OD1  OBPM  OD1     OBDA     OD1   Sf  OD1  QFstr  QFstr   OD1  OBPM   OD1    OBDA   OD1   Sd    OD1  QDstr
+
+#============================================ARC II========================================================
+
+QDstr  OD1  OBPM  OD1     OBDA     OD1   Sf  OD1  QFstr  QFstr   OD1  OBPM   OD1    OBDA   OD1   Sd    OD1  QDstr
+QDstr  OD1  OBPM  OD1     OBDA     OD1   Sf  OD1  QFstr  QFstr   OD1  OBPM   OD1    OBDA   OD1   Sd    OD1  QDstr
+
+QDA1  OD1  OBPM  OD1     BDA     OD1   Sf  OD1  QFA1  QFA1   OD1  OBPM   OD1    BDA   OD1   Sd    OD1  QDA1
+QDA1  OD1  OBPM  OD1     BDA     OD1   Sf  OD1  QFA1  QFA1   OD1  OBPM   OD1    BDA   OD1   Sd    OD1  QDA1
+QDA1  OD1  OBPM  OD1     BDA     OD1   Sf  OD1  QFA1  QFA1   OD1  OBPM   OD1    BDA   OD1   Sd    OD1  QDA1
+
+QDA1  OD1  OBPM  OD1     BDA     OD1   Sf  OD1  QFA1  QFA1   OD1  OBPM   OD1    BDA   OD1   Sd    OD1  QDA1
+QDA1  OD1  OBPM  OD1     BDA     OD1   Sf  OD1  QFA1  QFA1   OD1  OBPM   OD1    BDA   OD1   Sd    OD1  QDA1
+QDA1  OD1  OBPM  OD1     BDA     OD1   Sf  OD1  QFA1  QFA1   OD1  OBPM   OD1    BDA   OD1   Sd    OD1  QDA1
+
+QDstr  OD1  OBPM  OD1     OBDA     OD1   Sf  OD1  QFstr  QFstr   OD1  OBPM   OD1    OBDA   OD1   Sd    OD1  QDstr
+QDstr  OD1  OBPM  OD1     OBDA     OD1   Sf  OD1  QFstr  QFstr   OD1  OBPM   OD1    OBDA   OD1   Sd    OD1  QDstr
+      
+
+
+
+end lattice
+begin list
+#============================Parameters of elements in ARCI and ARCII====================================
+OD1 	L[cm]=20       
+ODR 	L[cm]=0        
+OFD 	L[cm]=39.1413  
+ODD23 	L[cm]=0        
+#ODD34 	L[cm]=401      
+OFF33 	L[cm]=454      
+ODD45 	L[cm]=0        
+OD4 	L[cm]=70       
+ODS 	L[cm]=40       
+#-------------------------------------------------------------
+QFA1 	L[cm]=20         	G[kG/cm]=0.4735  	Tilt[deg]=0
+#G[kG/cm]=0.685
+QDA1 	L[cm]=20         	G[kG/cm]=-0.61   	Tilt[deg]=0
+#G[kG/cm]=-0.745
+#-------------------------------------------------------------- 
+QFE1 	L[cm]=30         	G[kG/cm]=0.87368 	Tilt[deg]=0
+QFE2 	L[cm]=30         	G[kG/cm]=0.94693 	Tilt[deg]=0
+#-------------------------------------------------------------- 
+BDA 	L[cm]=187.165559   	B[kG]=10.5       	G[kG/cm]=0        	Tilt[deg]=0
+OBDA 	L[cm]=187.165559 
+#--------------------------------------------------------------
+OBPM 	L[cm]=30       
+Sf 	L[cm]=30         	S[kG/cm/cm)]=0.022705   Tilt[deg]=0
+Sd 	L[cm]=30         	S[kG/cm/cm)]=-0.039   Tilt[deg]=0
+#=======================Parameters of elements in STRAIGHT SECTION I and II==============================
+ 
+Ostrfd 	L[cm]=30       
+Ostrff 	L[cm]=30       
+Ostr 	L[cm]=767.295  
+#-------------------------------------------------------------- 
+QFstr 	L[cm]=20         	G[kG/cm]=0.4495  	Tilt[deg]=0
+QDstr 	L[cm]=20         	G[kG/cm]=-0.5625 	Tilt[deg]=0
+
+#=====================================Parameters of lements in MATCHING===================================
+QM1 	L[cm]=50         	G[kG/cm]=-0.401064 	Tilt[deg]=0
+QM2 	L[cm]=50         	G[kG/cm]=0.582117 	Tilt[deg]=0
+OM 	L[cm]=119.897  
+Oedge 	L[cm]=238.594  
+Oedge1 	L[cm]=208.594  
+
+QM1 	L[cm]=50         	G[kG/cm]=-0.4523326 	Tilt[deg]=0
+QM2 	L[cm]=50         	G[kG/cm]=0.628724 	Tilt[deg]=0
+OM 	L[cm]=98.49213 
+Oedge 	L[cm]=253.62136 
+
+end list of elements
+
+BetaFitBlock dL[cm]=1. dB[kG]=0.01 dG[kG/cm]=0.005
+#Requested parameters and corresponding accuracy are listed below (dPARM<=0. - no fitting)
+#Maximum Betas[cm] and Momentum Compaction (Alfa) are on the next line
+BtXmax=5000.  dBtXmax=0.  BtYmax=5000.  dBtYmax=0.  Alfa=0.  dAlfa=0.
+#Fitting parameters at the end of the lattice
+Beta_X[cm]=0.   dBeta_X[cm]=0.   Alfa_X=0.        dAlfa_X=0.
+Beta_Y[cm]=0.   dBeta_Y[cm]=0.   Alfa_Y=0.       dAlfa_Y=0.
+Disp_X[cm]=0.     dDisp_X[cm]=0.   D_prime_X=0.     dD_prime_X=0.
+Disp_Y[cm]=0.     dDisp_Y[cm]=0.   D_prime_Y=0.     dD_prime_Y=0.
+Qx=9.44             dQx=0.01
+Qy=9.44             dQy=0.01
+#Fit at Element with number =2 
+#To create a constraint at an intermediate element: uncomment the line above, 
+# write the correct Element number and insert six lines describing the
+# fit parameters. You can use up to 4 intermediate points
+#Each point has to be specified as described above
+#
+#Insert groups of Elements below. Each group has to be located on one line.
+#Start from the letter describing the type of changeable parameter such as: L:, B:, G: 
+G: QM1
+G: QM2
+EndBetaFitBlock
+
+BetaFitBlock dL[cm]=1. dB[kG]=0.01 dG[kG/cm]=0.001
+#Requested parameters and corresponding accuracy are listed below (dPARM<=0. - no fitting)
+#Maximum Betas[cm] and Momentum Compaction (Alfa) are on the next line
+BtXmax=50000.  dBtXmax=0.  BtYmax=50000.  dBtYmax=0.  Alfa=0.  dAlfa=0.
+#Fitting parameters at the end of the lattice
+Beta_X[cm]=1501.39   dBeta_X[cm]=20.   Alfa_X=-0.883764        dAlfa_X=0.03
+Beta_Y[cm]=1501.29   dBeta_Y[cm]=20.   Alfa_Y=-0.88426       dAlfa_Y=0.03
+Disp_X[cm]=0.     dDisp_X[cm]=0.   D_prime_X=0.     dD_prime_X=0.
+Disp_Y[cm]=0.     dDisp_Y[cm]=0.   D_prime_Y=0.     dD_prime_Y=0.
+Qx=0.0             dQx=0.0
+Qy=0.0             dQy=0.0
+#Fit at Element with number =2 
+#To create a constraint at an intermediate element: uncomment the line above, 
+# write the correct Element number and insert six lines describing the
+# fit parameters. You can use up to 4 intermediate points
+#Each point has to be specified as described above
+#
+#Insert groups of Elements below. Each group has to be located on one line.
+#Start from the letter describing the type of changeable parameter such as: L:, B:, G: 
+G: QM1
+G: QM2
+L: OM
+L: Oedge
+EndBetaFitBlock
+
+Sd
+QDA1  OD1  OBPM  OD1     BDA     OD1   Sf  OD1  QFE1  QFE1   OD1  OBPM   OD1    OBDA  OD1   Sd    OD1  QDA1
+QDA1  OD1  OBPM  OD1     OBDA    OD1   Sf  OD1  QFE2  QFE2   OD1  OBPM   OD1    BDA   OD1   Sd    OD1  QDA1
+QDA1  OD1  OBPM  OD1     BDA     OD1   Sf  OD1  QFA1  QFA1   OD1  OBPM   OD1    BDA   OD1   Sd    OD1  QDA1
+QDA1  OD1  OBPM  OD1     BDA     OD1   Sf  OD1  QFA1  QFA1   OD1  OBPM   OD1    BDA   OD1   Sd    OD1  QDA1
+QDA1  OD1  OBPM  OD1     BDA     OD1   Sf  OD1  QFA1  QFA1   OD1  OBPM   OD1    BDA   OD1   Sd    OD1  QDA1
+QDA1  OD1  OBPM  OD1     BDA     OD1   Sf  OD1  QFA1  QFA1   OD1  OBPM   OD1    BDA   OD1   Sd    OD1  QDA1
+
+QDA1  OD1  OBPM  OD1     BDA     OD1   Sf  OD1  QFA1  QFA1   OD1  OBPM   OD1    BDA   OD1   Sd    OD1  QDA1
+QDA1  OD1  OBPM  OD1     BDA     OD1   Sf  OD1  QFA1  QFA1   OD1  OBPM   OD1    BDA   OD1   Sd    OD1  QDA1
+QDA1  OD1  OBPM  OD1     BDA     OD1   Sf  OD1  QFA1  QFA1   OD1  OBPM   OD1    BDA   OD1   Sd    OD1  QDA1
+
+QDA1  OD1  OBPM  OD1     BDA     OD1   Sf  OD1  QFA1  QFA1   OD1  OBPM   OD1    BDA   OD1   Sd    OD1  QDA1
+QDA1  OD1  OBPM  OD1     BDA     OD1   Sf  OD1  QFE2  QFE2   OD1  OBPM   OD1    OBDA  OD1   Sd    OD1  QDA1
+QDA1  OD1  OBPM  OD1     OBDA    OD1   Sf  OD1  QFE1  QFE1   OD1  OBPM   OD1    BDA   OD1   Sd    OD1  QDA1
+Sd
+#==================================MATCHING between ARC I and STRAIGHT SECTION I=========================
+Oedge1 QM1 OM QM2 Oedge
+#=========================================STRAIGHT SECTION I=============================================
+         QDstr  Ostrfd   QFstr  Ostrff  QFstr   Ostrfd    QDstr         Ostr
+Ostr     QDstr  Ostrfd   QFstr  Ostrff  QFstr   Ostrfd    QDstr         Ostr
+Ostr     QDstr  Ostrfd   QFstr  Ostrff  QFstr   Ostrfd    QDstr         Ostr
+Ostr     QDstr  Ostrfd   QFstr  Ostrff  QFstr   Ostrfd    QDstr         Ostr
+Ostr     QDstr  Ostrfd   QFstr  Ostrff  QFstr   Ostrfd    QDstr        
+#========================================MATCHING  between STRAIGHT SECTION I and ARC II=================
+Oedge QM2 OM QM1 Oedge1
+#===============================================ARC II====================================================
+Sd
+QDA1  OD1  OBPM  OD1     BDA     OD1   Sf  OD1  QFE1  QFE1   OD1  OBPM   OD1    OBDA  OD1   Sd    OD1  QDA1
+QDA1  OD1  OBPM  OD1     OBDA    OD1   Sf  OD1  QFE2  QFE2   OD1  OBPM   OD1    BDA   OD1   Sd    OD1  QDA1
+QDA1  OD1  OBPM  OD1     BDA     OD1   Sf  OD1  QFA1  QFA1   OD1  OBPM   OD1    BDA   OD1   Sd    OD1  QDA1
+
+QDA1  OD1  OBPM  OD1     BDA     OD1   Sf  OD1  QFA1  QFA1   OD1  OBPM   OD1    BDA   OD1   Sd    OD1  QDA1
+QDA1  OD1  OBPM  OD1     BDA     OD1   Sf  OD1  QFA1  QFA1   OD1  OBPM   OD1    BDA   OD1   Sd    OD1  QDA1
+QDA1  OD1  OBPM  OD1     BDA     OD1   Sf  OD1  QFA1  QFA1   OD1  OBPM   OD1    BDA   OD1   Sd    OD1  QDA1
+
+QDA1  OD1  OBPM  OD1     BDA     OD1   Sf  OD1  QFA1  QFA1   OD1  OBPM   OD1    BDA   OD1   Sd    OD1  QDA1
+QDA1  OD1  OBPM  OD1     BDA     OD1   Sf  OD1  QFA1  QFA1   OD1  OBPM   OD1    BDA   OD1   Sd    OD1  QDA1
+QDA1  OD1  OBPM  OD1     BDA     OD1   Sf  OD1  QFA1  QFA1   OD1  OBPM   OD1    BDA   OD1   Sd    OD1  QDA1
+
+QDA1  OD1  OBPM  OD1     BDA     OD1   Sf  OD1  QFA1  QFA1   OD1  OBPM   OD1    BDA   OD1   Sd    OD1  QDA1
+QDA1  OD1  OBPM  OD1     BDA     OD1   Sf  OD1  QFE2  QFE2   OD1  OBPM   OD1    OBDA  OD1   Sd    OD1  QDA1
+QDA1  OD1  OBPM  OD1     OBDA    OD1   Sf  OD1  QFE1  QFE1   OD1  OBPM   OD1    BDA   OD1   Sd    OD1  QDA1
+Sd
+#===================================MATCHING  between ARCII I and STRAIGT SECTION II=====================
+Oedge1 QM1 OM QM2 Oedge
+#=========================================STRAIGHT SECTION II============================================
+         QDstr  Ostrfd   QFstr  Ostrff  QFstr   Ostrfd    QDstr         Ostr
+Ostr     QDstr  Ostrfd   QFstr  Ostrff  QFstr   Ostrfd    QDstr         Ostr
+Ostr     QDstr  Ostrfd   QFstr  Ostrff  QFstr   Ostrfd    QDstr         Ostr
+Ostr     QDstr  Ostrfd   QFstr  Ostrff  QFstr   Ostrfd    QDstr  
+#============================================MATCHING between STRAIGHT SECTION II and ARC I====================================================
+Oedge QM2 OM QM1 Oedge1
