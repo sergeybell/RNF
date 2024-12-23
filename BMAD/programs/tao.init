@@ -5,7 +5,7 @@
 /
 
 &tao_design_lattice
-  design_lattice(1)%file='/home/bell/GIT_PROJECTS/RNF/BMAD/lattices/rnf.bmad'
+  design_lattice(1)%file='/home/bell/GIT_PROJECTS/RNF/BMAD/lattices/neutrino_ring.bmad'
 /
 
 &tao_global_struct

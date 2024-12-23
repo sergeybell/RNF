@@ -1,0 +1,94 @@
+!+
+! Translated from MADX to Bmad by madx_to_bmad.py
+! File: neutrino_ring.seq
+!-
+
+
+!TITLE Converted from LATTICE EDITOR: Lattice Russian Neutrino  Factory_MR_ring_2.opt[*].  Mon Dec 23 16:07:52 2024
+
+!  Kinetic energy=30000 MeV, mass=938.28 MeV
+!  BetaX=5.52561 m,  AlphaX=3.41357e-15,  BetaY=20.7273 m,  AlphaY=2.34601e-16
+!  DispX=0.0216127 m,  DispPX=3.3303e-16,  DispY=0 m,  DispPY=0
+
+
+od1: drift, l = 0.2
+osf: drift, l = 0.3
+osd: drift, l = 0.3
+qfa1: quadrupole, l = 0.5, k1 = 0.2138194323
+qda1: quadrupole, l = 0.5, k1 = -0.241901422
+qfa2: quadrupole, l = 0.5, k1 = 0.3243364631
+bda: sbend, l = 3.7505613, angle = 0.06544751032
+obda: drift, l = 3.7505613
+obpm: drift, l = 0.3
+sf: sextupole, l = 0.3, k2 = 0.2201130863
+sd: sextupole, l = 0.3, k2 = -0.3780845791
+qfstr: quadrupole, l = 0.5, k1 = 0.1784345935
+qdstr: quadrupole, l = 0.5, k1 = -0.2569278604
+
+MACHINE: LINE=(QDstr, OD1, OBPM, OD1, OBDA, OD1, OSf, OD1, QFstr, QFstr,OD1, OBPM, OD1, OBDA, OD1, OSd, OD1, QDstr,
+          QDstr, OD1, OBPM, OD1, OBDA,OD1, OSf, OD1, QFstr, QFstr, OD1, OBPM, OD1, OBDA, OD1, OSd, OD1, QDstr,QDA1, OD1, OBPM,
+          OD1, BDA, OD1, Sf, OD1, QFA1, QFA1, OD1, OBPM, OD1, BDA,OD1, Sd, OD1, QDA1, QDA1, OD1, OBPM, OD1, BDA, OD1, Sf, OD1,
+          QFA2, QFA2,OD1, OBPM, OD1, BDA, OD1, Sd, OD1, QDA1, QDA1, OD1, OBPM, OD1, BDA, OD1,Sf, OD1, QFA1, QFA1, OD1, OBPM, OD1,
+          BDA, OD1, Sd, OD1, QDA1, QDA1, OD1,OBPM, OD1, BDA, OD1, Sf, OD1, QFA1, QFA1, OD1, OBPM, OD1, BDA, OD1, Sd,OD1, QDA1,
+          QDA1, OD1, OBPM, OD1, BDA, OD1, Sf, OD1, QFA2, QFA2, OD1, OBPM,OD1, BDA, OD1, Sd, OD1, QDA1, QDA1, OD1, OBPM, OD1, BDA,
+          OD1, Sf, OD1,QFA1, QFA1, OD1, OBPM, OD1, BDA, OD1, Sd, OD1, QDA1, QDA1, OD1, OBPM, OD1,BDA, OD1, Sf, OD1, QFA1, QFA1,
+          OD1, OBPM, OD1, BDA, OD1, Sd, OD1, QDA1,QDA1, OD1, OBPM, OD1, BDA, OD1, Sf, OD1, QFA2, QFA2, OD1, OBPM, OD1, BDA,OD1,
+          Sd, OD1, QDA1, QDA1, OD1, OBPM, OD1, BDA, OD1, Sf, OD1, QFA1, QFA1,OD1, OBPM, OD1, BDA, OD1, Sd, OD1, QDA1, QDA1, OD1,
+          OBPM, OD1, BDA, OD1,Sf, OD1, QFA1, QFA1, OD1, OBPM, OD1, BDA, OD1, Sd, OD1, QDA1, QDA1, OD1,OBPM, OD1, BDA, OD1, Sf,
+          OD1, QFA2, QFA2, OD1, OBPM, OD1, BDA, OD1, Sd,OD1, QDA1, QDA1, OD1, OBPM, OD1, BDA, OD1, Sf, OD1, QFA1, QFA1, OD1,
+          OBPM,OD1, BDA, OD1, Sd, OD1, QDA1, QDstr, OD1, OBPM, OD1, OBDA, OD1, OSf, OD1,QFstr, QFstr, OD1, OBPM, OD1, OBDA, OD1,
+          OSd, OD1, QDstr, QDstr, OD1, OBPM,OD1, OBDA, OD1, OSf, OD1, QFstr, QFstr, OD1, OBPM, OD1, OBDA, OD1, OSd,OD1, QDstr,
+          QDstr, OD1, OBPM, OD1, OBDA, OD1, OSf, OD1, QFstr, QFstr, OD1,OBPM, OD1, OBDA, OD1, OSd, OD1, QDstr, QDstr, OD1, OBPM,
+          OD1, OBDA, OD1,OSf, OD1, QFstr, QFstr, OD1, OBPM, OD1, OBDA, OD1, OSd, OD1, QDstr, QDA1,OD1, OBPM, OD1, BDA, OD1, Sf,
+          OD1, QFA1, QFA1, OD1, OBPM, OD1, BDA, OD1,Sd, OD1, QDA1, QDA1, OD1, OBPM, OD1, BDA, OD1, Sf, OD1, QFA2, QFA2, OD1,OBPM,
+          OD1, BDA, OD1, Sd, OD1, QDA1, QDA1, OD1, OBPM, OD1, BDA, OD1, Sf,OD1, QFA1, QFA1, OD1, OBPM, OD1, BDA, OD1, Sd, OD1,
+          QDA1, QDA1, OD1, OBPM,OD1, BDA, OD1, Sf, OD1, QFA1, QFA1, OD1, OBPM, OD1, BDA, OD1, Sd, OD1,QDA1, QDA1, OD1, OBPM, OD1,
+          BDA, OD1, Sf, OD1, QFA2, QFA2, OD1, OBPM, OD1,BDA, OD1, Sd, OD1, QDA1, QDA1, OD1, OBPM, OD1, BDA, OD1, Sf, OD1, QFA1,
+         QFA1, OD1, OBPM, OD1, BDA, OD1, Sd, OD1, QDA1, QDA1, OD1, OBPM, OD1, BDA,OD1, Sf, OD1, QFA1, QFA1, OD1, OBPM, OD1, BDA,
+          OD1, Sd, OD1, QDA1, QDA1,OD1, OBPM, OD1, BDA, OD1, Sf, OD1, QFA2, QFA2, OD1, OBPM, OD1, BDA, OD1,Sd, OD1, QDA1, QDA1,
+          OD1, OBPM, OD1, BDA, OD1, Sf, OD1, QFA1, QFA1, OD1,OBPM, OD1, BDA, OD1, Sd, OD1, QDA1, QDA1, OD1, OBPM, OD1, BDA, OD1,
+          Sf,OD1, QFA1, QFA1, OD1, OBPM, OD1, BDA, OD1, Sd, OD1, QDA1, QDA1, OD1, OBPM,OD1, BDA, OD1, Sf, OD1, QFA2, QFA2, OD1,
+          OBPM, OD1, BDA, OD1, Sd, OD1,QDA1, QDA1, OD1, OBPM, OD1, BDA, OD1, Sf, OD1, QFA1, QFA1, OD1, OBPM, OD1,BDA, OD1, Sd,
+          OD1, QDA1, QDstr, OD1, OBPM, OD1, OBDA, OD1, OSf, OD1, QFstr,QFstr, OD1, OBPM, OD1, OBDA, OD1, OSd, OD1, QDstr, QDstr,
+          OD1, OBPM, OD1,OBDA, OD1, OSf, OD1, QFstr, QFstr, OD1, OBPM, OD1, OBDA, OD1, OSd, OD1,QDstr, QDstr, OD1, OBPM, OD1,
+          OBDA, OD1, OSf, OD1, QFstr, QFstr, OD1, OBPM,OD1, OBDA, OD1, OSd, OD1, QDstr, QDstr, OD1, OBPM, OD1, OBDA, OD1, OSf,
+         OD1, QFstr, QFstr, OD1, OBPM, OD1, OBDA, OD1, OSd, OD1, QDstr, QDA1, OD1,OBPM, OD1, BDA, OD1, Sf, OD1, QFA1, QFA1, OD1,
+          OBPM, OD1, BDA, OD1, Sd,OD1, QDA1, QDA1, OD1, OBPM, OD1, BDA, OD1, Sf, OD1, QFA2, QFA2, OD1, OBPM,OD1, BDA, OD1, Sd,
+          OD1, QDA1, QDA1, OD1, OBPM, OD1, BDA, OD1, Sf, OD1,QFA1, QFA1, OD1, OBPM, OD1, BDA, OD1, Sd, OD1, QDA1, QDA1, OD1,
+          OBPM, OD1,BDA, OD1, Sf, OD1, QFA1, QFA1, OD1, OBPM, OD1, BDA, OD1, Sd, OD1, QDA1,QDA1, OD1, OBPM, OD1, BDA, OD1, Sf,
+          OD1, QFA2, QFA2, OD1, OBPM, OD1, BDA,OD1, Sd, OD1, QDA1, QDA1, OD1, OBPM, OD1, BDA, OD1, Sf, OD1, QFA1, QFA1,OD1, OBPM,
+          OD1, BDA, OD1, Sd, OD1, QDA1, QDA1, OD1, OBPM, OD1, BDA, OD1,Sf, OD1, QFA1, QFA1, OD1, OBPM, OD1, BDA, OD1, Sd, OD1,
+          QDA1, QDA1, OD1,OBPM, OD1, BDA, OD1, Sf, OD1, QFA2, QFA2, OD1, OBPM, OD1, BDA, OD1, Sd,OD1, QDA1, QDA1, OD1, OBPM, OD1,
+          BDA, OD1, Sf, OD1, QFA1, QFA1, OD1, OBPM,OD1, BDA, OD1, Sd, OD1, QDA1, QDA1, OD1, OBPM, OD1, BDA, OD1, Sf, OD1,QFA1,
+          QFA1, OD1, OBPM, OD1, BDA, OD1, Sd, OD1, QDA1, QDA1, OD1, OBPM, OD1,BDA, OD1, Sf, OD1, QFA2, QFA2, OD1, OBPM, OD1, BDA,
+          OD1, Sd, OD1, QDA1,QDA1, OD1, OBPM, OD1, BDA, OD1, Sf, OD1, QFA1, QFA1, OD1, OBPM, OD1, BDA,OD1, Sd, OD1, QDA1, QDstr,
+          OD1, OBPM, OD1, OBDA, OD1, OSf, OD1, QFstr,QFstr, OD1, OBPM, OD1, OBDA, OD1, OSd, OD1, QDstr, QDstr, OD1, OBPM, OD1,
+         OBDA, OD1, OSf, OD1, QFstr, QFstr, OD1, OBPM, OD1, OBDA, OD1, OSd, OD1,QDstr, QDstr, OD1, OBPM, OD1, OBDA, OD1, OSf,
+          OD1, QFstr, QFstr, OD1, OBPM,OD1, OBDA, OD1, OSd, OD1, QDstr, QDstr, OD1, OBPM, OD1, OBDA, OD1, OSf,OD1, QFstr, QFstr,
+          OD1, OBPM, OD1, OBDA, OD1, OSd, OD1, QDstr, QDA1, OD1,OBPM, OD1, BDA, OD1, Sf, OD1, QFA1, QFA1, OD1, OBPM, OD1, BDA,
+          OD1, Sd,OD1, QDA1, QDA1, OD1, OBPM, OD1, BDA, OD1, Sf, OD1, QFA2, QFA2, OD1, OBPM,OD1, BDA, OD1, Sd, OD1, QDA1, QDA1,
+          OD1, OBPM, OD1, BDA, OD1, Sf, OD1,QFA1, QFA1, OD1, OBPM, OD1, BDA, OD1, Sd, OD1, QDA1, QDA1, OD1, OBPM, OD1,BDA, OD1,
+          Sf, OD1, QFA1, QFA1, OD1, OBPM, OD1, BDA, OD1, Sd, OD1, QDA1,QDA1, OD1, OBPM, OD1, BDA, OD1, Sf, OD1, QFA2, QFA2, OD1,
+          OBPM, OD1, BDA,OD1, Sd, OD1, QDA1, QDA1, OD1, OBPM, OD1, BDA, OD1, Sf, OD1, QFA1, QFA1,OD1, OBPM, OD1, BDA, OD1, Sd,
+          OD1, QDA1, QDA1, OD1, OBPM, OD1, BDA, OD1,Sf, OD1, QFA1, QFA1, OD1, OBPM, OD1, BDA, OD1, Sd, OD1, QDA1, QDA1, OD1,OBPM,
+          OD1, BDA, OD1, Sf, OD1, QFA2, QFA2, OD1, OBPM, OD1, BDA, OD1, Sd,OD1, QDA1, QDA1, OD1, OBPM, OD1, BDA, OD1, Sf, OD1,
+          QFA1, QFA1, OD1, OBPM,OD1, BDA, OD1, Sd, OD1, QDA1, QDA1, OD1, OBPM, OD1, BDA, OD1, Sf, OD1,QFA1, QFA1, OD1, OBPM, OD1,
+          BDA, OD1, Sd, OD1, QDA1, QDA1, OD1, OBPM, OD1,BDA, OD1, Sf, OD1, QFA2, QFA2, OD1, OBPM, OD1, BDA, OD1, Sd, OD1, QDA1,
+         QDA1, OD1, OBPM, OD1, BDA, OD1, Sf, OD1, QFA1, QFA1, OD1, OBPM, OD1, BDA,OD1, Sd, OD1, QDA1, QDstr, OD1, OBPM, OD1,
+          OBDA, OD1, OSf, OD1, QFstr,QFstr, OD1, OBPM, OD1, OBDA, OD1, OSd, OD1, QDstr, QDstr, OD1, OBPM, OD1,OBDA, OD1, OSf,
+          OD1, QFstr, QFstr, OD1, OBPM, OD1, OBDA, OD1, OSd, OD1,QDstr)
+
+parameter[E_tot] = 30.9382796 * 1e9
+
+use, machine
+
+beginning[beta_a] = 5.52561
+beginning[beta_b] = 20.7273
+beginning[alpha_a] = 3.41357e-15
+beginning[alpha_a] = 2.34601e-16
+beginning[eta_x] = 0.0216127
+beginning[eta_y] = 0
+beginning[etap_x] = 3.3303e-16
+beginning[etap_y] = 0
+
+
