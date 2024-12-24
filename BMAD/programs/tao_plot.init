@@ -102,7 +102,7 @@
 
 !&floor_plan_drawing
   include_default_shapes = T
-  ele_shape(1)  = "Quadrupole::*"      "Box"      "Red"     1     'none'
+  ele_shape(1)  = "Quadrupole::*"      "asym_var_box"      "Red"     1     'none'
   ele_shape(2)  = "SBend::*"           "Box"      "Blue"      1     'none'
   ele_shape(3)  = "wiggler::*"         "XBox"     "Orange"   1    'none'
   ele_shape(4)  = "Sextupole::*"       "Box"      "orange"   1    'none'
